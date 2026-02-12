@@ -1,0 +1,750 @@
+
+/* -------  STYLE DLA LAYOUTU I NAVBARA --------------*/
+
+body {
+    margin: 0;
+    font-family: "Segoe UI",sans-serif;
+    background-color: #f5f7fa;
+    color: black;
+}
+
+.mainContainer {
+    padding: 15px 25px;
+}
+
+a {
+    text-decoration: none;
+}
+.mainNavbar {
+    position: sticky;
+    top: 0;
+    background: #032e09;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    box-shadow: 0 1px 3px;
+}
+
+.mainNavbar h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.mainNavbar a {
+    color: white;
+    padding: 0.4rem 0.8rem;
+    font-weight: 500;
+}
+
+.mainNavbar a:hover {
+    color: #bbbfbc;
+}
+
+
+/*---------STYLE DLA WIDOKU WYSWIETLANIA OGŁOSZEN-----------*/
+.listingsPage{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+.resultsCount {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 0;
+    color: black;
+    text-align: left;
+    border-bottom: 1px solid gray;
+}
+
+.listingsCards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+}
+
+.listingCard {
+
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid gray;
+    overflow: hidden;
+    transition: 0.2s ease;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.listingCard-photo {
+    height:250px;
+    border-bottom: 1px solid #eee;
+}
+
+.listingCard-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.listingCard-body {
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.listingCard-body h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.metaData {
+    font-size: 13px;
+    color: #666;
+}
+
+.listingCard-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-top: 1px solid #4d9850;
+
+}
+
+.detailsBtn {
+    padding: 8px 14px;
+    background: #2d652f;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.detailsBtn:hover {
+    background: #4d9850;
+}
+
+.iconBtn {
+    width: 34px;
+    height: 34px;
+    border: none;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+
+.editBtn {
+    padding: 8px 14px;
+    background: #005fd1;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.editBtn:hover{
+    background: #2b7cff;
+}
+
+.iconBtn.delete {
+    color: darkred;
+}
+
+.iconBtn.fav {
+    color: gray;
+    font-size: 30px;
+
+}
+
+.iconBtn.fav:hover {
+    color: crimson;
+}
+
+.iconBtn.fav:focus{
+    color: crimson;
+}
+
+/* ------------- STYLE DLA WIDOKU JEDNEGO OGŁOSZENIA ---------------*/
+
+
+.listingDetailsPage {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.detailsCard {
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 12px;
+    padding:24px;
+    box-shadow: 0 8px 15px;
+
+}
+
+/*STYLE DLA RZECZY PO LEWEJ*/
+.detailsLeft{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detailsPhoto {
+    width: 100%;
+    height: 350px;
+    background: #f0f0f0;
+}
+
+.detailsTitleAndPrice {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #2d652f;
+}
+
+.detailsPhoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detailsPrice {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.detailsDescription {
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+/*STYLE DLA RZECZY PO PRAWEJ*/
+
+.detailsRight{
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-left: 1px solid #4d9850;
+}
+
+.contactBox {
+    background: rgba(143, 186, 144, 0.55);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.contactBox h2 {
+    margin-top: 0;
+    border-bottom: 1px solid #4d9850;
+}
+
+.msgBtn {
+    margin-top: auto;
+    padding:12px;
+    border: none;
+    border-radius: 10px;
+    background: #2d652f;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.msgBtn:hover {
+    background: #4d9850;
+}
+
+/*------- STYLE DLA STRON LOGOWANIA I REJESTRACJI -------*/
+
+.authContainer{
+
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.authBtn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #2d652f;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top:10px;
+    font-size: 14px;
+}
+
+.authBtn:hover {
+    background: #4d9850;
+}
+
+.formErrors p {
+    color: darkred;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/*STRONA LOGOWANIA*/
+
+.authCard {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 10px 25px;
+}
+
+.authCard h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4d9850;
+}
+
+.authInput {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.authInput label {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.authInput input {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.authInput input:focus{
+    outline-color: #4d9850;
+}
+
+/*----- STYLE DLA PROFILU UZYTKOWNIKA -----*/
+
+.userProfilePage {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.profileCard {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    border-right: 14px;
+    padding: 28px 24px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.profileCard-avatar {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 16px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #2d653f;
+}
+
+.profileCard-avatar img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.profileCard h2 {
+    margin: 10px 0 14px;
+    font-size: 22px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4d9850;
+}
+
+.profileMetaData {
+    background: #f5f7fa;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.profileMetaData p {
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+.profileActions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profileActions a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.passwordBtn {
+    padding: 10px 14px;
+    background: #005fd1;
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.passwordBtn:hover{
+    background: #2b7cff;
+}
+
+.deleteBtn {
+    padding: 10px 14px;
+    background: darkred;
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.deleteBtn:hover{
+    background: crimson;
+}
+
+/*----- STYLE DLA FORMULARZ DODAWANIA/EDYTOWANIA -----*/
+
+.listingFormPage {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.formCard {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 8px 15px;
+}
+
+.formCard h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.formInput {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.formInput label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.formInput input, .formInput select, .formInput textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.formInput input:focus, .formInput select:focus, .formInput textarea:focus {
+    outline-color: #4d9850;
+}
+
+.formErrors {
+    color: darkred;
+    font-size: 16px;
+    text-align: center;
+}
+
+.formActions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.saveBtn{
+    background: #2d652f;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.saveBtn:hover {
+    background: #4d9850;
+}
+
+.cancelBtn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 2px solid #aaa;
+    color: #444;
+    font-weight: 500;
+}
+
+.cancelBtn:hover{
+    background: #444;
+    color: white;
+}
+
+
+ /*------ STYLE DLA FORMULARZA EDYTOWANIA PROFILU/ZMIANY HASLA -----*/
+
+.editProfileInput {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.editProfileInput label{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+.editProfileInput input{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.editProfileInput input:focus {
+    outline-color: #4d9850;
+}
+
+
+/*----- STYLE DLA WIDOKU ULUBIONYCH -----*/
+
+/*takie same co dla wyswietlania wszystkich*/
+
+
+/*----- STYLE DLA SEARCH BARA ------*/
+
+.searchBar {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    margin: 35px 0 30px 0;
+}
+
+.searchBar input {
+    width: 320px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.searchBar input:focus {
+    outline-color: #2d652f;
+}
+
+.searchBar button {
+    padding: 10px 16px;
+    background: #2d652f;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.searchBar button:hover {
+    background: #4d9850;
+}
+
+/*----- STYLE DLA WIADOMOSCI -----*/
+
+.messagesPage {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px;
+    padding: 24px 28px;
+}
+
+.messagesPage h2 {
+
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+    border-bottom: 2px solid #2d652f;
+    padding-bottom: 8px;
+}
+
+.messagesList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.messagesHeader {
+    display: grid;
+    grid-template-columns: 2fr 1fr 140px;
+    align-items: center;
+    padding: 14px 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #eee;
+}
+
+.messageRow {
+    display: grid;
+    grid-template-columns: 2fr 1fr 140px;
+    align-items: center;
+    padding: 14px 18px;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+}
+
+.messageRow:hover {
+    background: #eef4ef;
+    border-left-color: #2d652f;
+}
+
+.msgTitle {
+    font-weight: 600;
+    font-size: 15px;
+    color: #222;
+    margin: 0;
+}
+
+.msgTitle.unread {
+    font-weight: bold;
+    color: #4d9850;
+    font-size: 15px;
+    margin: 0;
+}
+
+.msgSender {
+    font-size: 16px;
+    color: #555
+}
+
+.msgDate {
+
+    font-size: 12px;
+    color: #888;
+}
+
+
+/*----- STYLE DLA FORMULARZA WIADOMOŚCI -----*/
+
+.messageFormPage{
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.messageCard {
+    background: white;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 8px 20px;
+}
+
+.messageCard h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #2d652f;
+}
+
+.msgMeta {
+    font-size: 16px;
+    color: #222;
+    margin-bottom: 16px;
+}
+
+.msgMeta p {
+    margin: 10px 0;
+}
+
+.messageCard textarea {
+    width: 96%;
+    min-height: 140px;
+    resize: none;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.messageCard textarea:focus {
+    outline-color: #2d652f;
+}
+
+.msgActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.msgActions button {
+    background: #2d652f;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.msgContent{
+    border: 2px solid #2d652f;
+    border-radius: 8px;
+    min-height: 140px;
+    padding:12px;
+}
