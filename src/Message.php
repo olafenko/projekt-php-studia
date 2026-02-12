@@ -48,10 +48,11 @@ class Message {
     }
 
     //wyswietla szczegóły wiadomosci i sprawdza czy nalezy ona do wlasciwego uzytkownika
-    function showMessageDetails($messageId,$userId) {
+    function getMessageDetails($messageId, $userId) {
 
         $sql = "SELECT m.*,
                 u.username as senderName,
+                u.id as senderId,
                 l.title as listingTitle,
                 l.id as listingId
                 FROM messages m 

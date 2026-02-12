@@ -11,7 +11,7 @@ if(!$messageId){
     exit;
 }
 
-$messageDetails = $message->showMessageDetails($messageId,$userId);
+$messageDetails = $message->getMessageDetails($messageId,$userId);
 
 if(!$messageDetails){
     $errors[] = "Nie znaleziono wiadomości";

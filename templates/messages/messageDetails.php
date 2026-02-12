@@ -19,7 +19,9 @@
         </div>
 
         <div class="msgActions">
-            <a class="msgBtn" href="../controllers/messagesController.php?action=send&listingId=<?=htmlspecialchars($messageDetails['listingId'])?>">Odpowiedz</a>
+            <form method="post" action="../controllers/messagesController.php?action=reply&messageId=<?=htmlspecialchars($messageDetails['id'])?>">
+                <button type="submit" class="msgBtn">Odpowiedz</button>
+            </form>
             <a class="cancelBtn" href="../controllers/messagesController.php">Wróć</a>
         </div>
 

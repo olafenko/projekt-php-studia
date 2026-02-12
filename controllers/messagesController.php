@@ -40,6 +40,12 @@ switch ($action){
         break;
     }
 
+    case "reply" : {
+
+        require __DIR__ . "/../handlers/messages/replyMessageHandler.php";
+        break;
+    }
+
 
 
 }
