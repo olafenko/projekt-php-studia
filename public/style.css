@@ -748,3 +748,47 @@ a {
     min-height: 140px;
     padding:12px;
 }
+
+/*----- STYLE DLA FORMULARZA ODPOWIADANIA NA WIADOMOŚĆ ------*/
+
+
+.replyMessageForm {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+
+.oldMessageCard{
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 6px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.oldMessageCard h2 {
+    margin: 0 0 10px 0;
+    border-bottom: 2px solid #2d652f;
+    padding-bottom: 6px;
+}
+
+.msgMeta {
+    font-size: 14px;
+    color: #444;
+    background: #f5f7fa;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.msgContent.old {
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+}

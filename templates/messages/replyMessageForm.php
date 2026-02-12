@@ -10,7 +10,7 @@
 
             </div>
             <p><strong>Treść:</strong></p>
-            <div class="msgContent">
+            <div class="msgContent old">
                 <?= htmlspecialchars($messageDetails['messageContent'])?>
             </div>
 
@@ -22,14 +22,6 @@
         <div class="msgMeta">
             <p><strong>Ogłoszenie: </strong> <?= htmlspecialchars($messageDetails['listingTitle'])?></p>
             <p><strong>Do: </strong> <?= htmlspecialchars($messageDetails['senderName'])?></p>
-        </div>
-
-        <div class="authErrors">
-            <?php
-            foreach ($errors as $error) {
-                echo "<p>" . htmlspecialchars($error) . "</p><br>";
-            }
-            ?>
         </div>
 
         <form method="post">

@@ -3,7 +3,7 @@
 requireLogin();
 
 
-$receiverId = $_SESSION['userId'];
+$currentUserId = $_SESSION['userId'];
 
 $messageId = filter_input(INPUT_GET,"messageId",FILTER_VALIDATE_INT);
 
@@ -14,7 +14,7 @@ if(!$messageId){
     exit;
 }
 
-if(!$messageDetails = $message->getMessageDetails($messageId,$receiverId)){
+if(!$messageDetails = $message->getMessageDetails($messageId,$currentUserId)){
     $errors[] = "Nie znaleziono danych wiadomości";
     header("Location: ../controllers/listingsController.php");
     exit;
@@ -22,7 +22,7 @@ if(!$messageDetails = $message->getMessageDetails($messageId,$receiverId)){
 
 if(isPost()){
 
-    $senderId = $messageDetails['senderId'];
+    $receiverId = $messageDetails['senderId'];
 
     $listingId = $messageDetails['listingId'];
 
@@ -32,7 +32,7 @@ if(isPost()){
 
     if(empty($errors)){
 
-        $message->sendMessage($senderId,$receiverId,$listingId,$content);
+        $message->sendMessage($currentUserId,$receiverId,$listingId,$content);
 
         header("Location:  ../controllers/messagesController.php");
         exit;
