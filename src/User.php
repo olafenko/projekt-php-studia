@@ -122,7 +122,7 @@ class User {
     }
 
     //funkcja deaktywująca konto uzytkownika
-    function deactivateUser($userId)
+
     {
         $sql = "UPDATE users SET isActive = 0 WHERE id=:userId";
 

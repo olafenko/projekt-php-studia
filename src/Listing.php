@@ -142,23 +142,6 @@ class Listing {
     }
 
 
-
-    //funkcja zwracająca ogłoszenia z danej kategorii
-    function getListingsByCategory($categoryId)
-    {
-
-        $sql = "SELECT * FROM listings WHERE categoryId=:categoryId AND isActive=1";
-        $statement = $this->pdo->prepare($sql);
-
-        $statement->execute([
-            ":categoryId" => $categoryId
-        ]);
-
-        return $statement->fetchAll();
-
-
-    }
-
     // funkcja usuwająca ogłoszenie po id
     function deleteListing($id){
 
