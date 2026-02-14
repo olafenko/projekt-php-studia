@@ -53,10 +53,15 @@ $isUserLogged = isset($_SESSION['userId']);
                                 <input type='hidden' name='listingId' value='<?= htmlspecialchars($listing['id']) ?>'>
                                 <button type='submit' class="iconBtn delete">❌</button>
                             </form>
-                        <?php } else { ?>
+                        <?php } else if (!in_array($listing['id'],$allFavourites)){ ?>
                             <form method='post' action='../controllers/favouritesController.php?action=add'>
                                 <input type='hidden' name='listingId' value='<?= htmlspecialchars($listing['id']) ?>'>
                                 <button type='submit' class="iconBtn fav">❤</button>
+                            </form>
+                        <?php } else { ?>
+                            <form method='post' action='../controllers/favouritesController.php?action=delete'>
+                                <input type='hidden' name='listingId' value='<?= htmlspecialchars($listing['id']) ?>'>
+                                <button type='submit' class="iconBtn inFavs">❤</button>
                             </form>
                         <?php } ?>
                     <?php } ?>

@@ -178,6 +178,16 @@ a {
     color: crimson;
 }
 
+.iconBtn.inFavs {
+    color: crimson;
+    font-size: 30px;
+}
+
+.iconBtn.inFavs:hover {
+    color: gray;
+
+}
+
 /* ------------- STYLE DLA WIDOKU JEDNEGO OGŁOSZENIA ---------------*/
 
 

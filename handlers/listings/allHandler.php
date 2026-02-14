@@ -1,5 +1,6 @@
 <?php
 
+
 if(isset($_GET['searchFragment'])){
     $searchFragment = htmlspecialchars($_GET['searchFragment']);
 } else $searchFragment =  "";
@@ -9,6 +10,11 @@ if(!empty($searchFragment)){
     $allListings = $listing->searchListings($searchFragment);
 } else {
     $allListings = $listing->getAllListings();
+}
+
+if(isset($_SESSION['userId'])){
+    $favourites  = $favourite->getFavourites($_SESSION['userId']);
+    $allFavourites = array_column($favourites,'listingId');
 }
 
 
