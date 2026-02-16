@@ -193,12 +193,5 @@ function validateMsgContent($value, &$errors){
 }
 
 
-//odopwiada za upload zdjecia
-
-function uploadPhoto($photoPath){
-
-    
-
-}
 
 
