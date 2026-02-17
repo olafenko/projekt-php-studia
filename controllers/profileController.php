@@ -7,12 +7,15 @@ require_once __DIR__ . "/../includes/database.php";
 require __DIR__ . "/../src/User.php";
 require __DIR__ . "/../src/Listing.php";
 require __DIR__ . "/../includes/helpers.php";
-
+require __DIR__ . "/../includes/ImageUploader.php";
 requireLogin();
 
 $pdo = connectWithDatabase();
 $user = new User($pdo);
 $listing = new Listing($pdo);
+$imageUploader = new ImageUploader();
+
+$uploadErrors = [];
 $errors = [];
 
 $action = $_GET['action'] ?? "show";

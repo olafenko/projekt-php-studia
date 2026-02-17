@@ -2,7 +2,7 @@
 
 <div class="userProfilePage">
 
-    <form class="profileCard" method="post">
+    <form class="profileCard" method="post" enctype="multipart/form-data">
         <h2>Edytuj profil</h2>
 
         <div class="authErrors">
@@ -26,7 +26,7 @@
         </div>
         <div class="editProfileInput">
             <label>Awatar URL: </label>
-            <input type="text" name="avatarUrl" value="<?= htmlspecialchars($userDetails['avatarUrl'])?>"  >
+            <input type="file" name="avatar" value="<?= htmlspecialchars($userDetails['avatarUrl'])?>"  >
         </div>
 
         <div class="formActions">

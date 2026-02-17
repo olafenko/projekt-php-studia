@@ -26,7 +26,11 @@ if (isPost()) {
         $categoryId = filter_input(INPUT_POST, "categoryId", FILTER_VALIDATE_INT);
         $location = trim(filter_input(INPUT_POST, "location"));
         $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT);
-        $photoUrl = trim(filter_input(INPUT_POST, "photoUrl"));
+        $photoUrl = "";
+        if(!empty($_FILES['image']['name'])){
+            $photoUrl = $imageUploader->uploadImage($_FILES['image'],$uploadErrors);
+        }
+
         $description = trim(filter_input(INPUT_POST, "description"));
 
         validateCategory($categoryId,$errors);

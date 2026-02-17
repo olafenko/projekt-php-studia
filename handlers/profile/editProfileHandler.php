@@ -16,7 +16,11 @@ if (isPost()) {
     $username = filter_input(INPUT_POST, "username");
     $email = filter_input(INPUT_POST, "email");
     $phoneNumber = trim(filter_input(INPUT_POST, "phoneNumber"));
-    $avatarUrl = trim(filter_input(INPUT_POST, "avatarUrl"));
+    $avatarUrl = '';
+
+    if(!empty($_FILES['avatar']['name'])){
+        $avatarUrl = $imageUploader->uploadImage($_FILES['avatar'],$uploadErrors);
+    }
 
 
     validateEmail($email, $errors);
