@@ -8,7 +8,8 @@
         <h2>Wiadomość</h2>
 
         <div class="msgMeta">
-            <p><strong>Od: <?= htmlspecialchars($messageDetails['senderName'])?></strong></p>
+<!--            //tu ma byc link do profilu uzytkownika tego co wyslal wiadomosc-->
+            <p><link">Od: <?= htmlspecialchars($messageDetails['senderName'])?></link></p>
             <p><strong>Ogłoszenie: <?= htmlspecialchars($messageDetails['listingTitle'])?></strong></p>
             <p><strong>Data: <?= htmlspecialchars($messageDetails['createdAt'])?></strong></p>
 
