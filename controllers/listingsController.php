@@ -9,12 +9,15 @@ require __DIR__ . "/../src/Listing.php";
 require __DIR__ . "/../src/Category.php";
 require __DIR__ . "/../src/Favourite.php";
 require __DIR__ . "/../includes/helpers.php";
+require __DIR__ . "/../includes/ImageUploader.php";
 
 $pdo = connectWithDatabase();
 $listing = new Listing($pdo);
 $category = new Category($pdo);
 $favourite = new Favourite($pdo);
+$imageUploader = new ImageUploader();
 
+$uploadErrors = [];
 $errors = [];
 
 $action = $_GET['action'] ?? "all";

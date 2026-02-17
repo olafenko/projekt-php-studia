@@ -1,6 +1,7 @@
 <?php
 
 requireLogin();
+
 $categories = $category->getAllCategories();
 
 
@@ -11,7 +12,13 @@ if (isPost()) {
     $categoryId = filter_input(INPUT_POST, "categoryId",FILTER_VALIDATE_INT);
     $location = trim(filter_input(INPUT_POST, "location"));
     $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT);
-    $photoUrl = trim(filter_input(INPUT_POST, "photoUrl"));
+
+    $photoUrl = ''; //początkowo brak zdjęcia, może ktoś go nie ustawiać
+
+    if(!empty($_FILES['image']['name'])){
+        $photoUrl = $imageUploader->uploadImage($_FILES['image'],$uploadErrors);
+    }
+
     $description = trim(filter_input(INPUT_POST, "description"));
 
     validateLocation($location, $errors);
@@ -22,10 +29,6 @@ if (isPost()) {
     if(!$category->existsById($categoryId)) $errors[] = "Nieprawidłowa kategoria";
 
     if (empty($errors)) {
-
-        if(!file_exists($photoUrl)){
-            $photoUrl = "/SerwisOgloszeniowy/public/no-image.jpg";
-        }
 
         if ($listing->createListing($title, $description, $_SESSION['userId'], $categoryId, $location, $photoUrl, $price)) {
             header("Location: ../controllers/listingsController.php");

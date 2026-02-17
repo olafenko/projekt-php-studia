@@ -20,7 +20,7 @@ $isEditing = !empty($listingDetails);
             ?>
         </div>
         <!--//form wysyła request  do kontrollera, z parametrem w zaleznosci czy ogłoszenie jest edytowane czy tworzone nowe-->
-        <form method="post" action="../controllers/listingsController.php?action=<?= $isEditing ? 'edit' : 'add' ?>">
+        <form method="post" action="../controllers/listingsController.php?action=<?= $isEditing ? 'edit' : 'add' ?>" enctype="multipart/form-data">
 
             <div class="formInput">
                 <label>Tytuł</label>
@@ -55,7 +55,7 @@ $isEditing = !empty($listingDetails);
 
             <div class="formInput">
                 <label>Zdjęcie (URL)</label>
-                <input type="text" name="photoUrl"
+                <input type="file" name="image"
                        value="<?= $isEditing ? htmlspecialchars($listingDetails['photoUrl']) : '' ?>">
             </div>
 
