@@ -1,5 +1,9 @@
 <?php
 
+//pobiera z geta id uzytkownika, jezeli chcemy wyswietlic profil kogos innego
+$userId = filter_input(INPUT_GET,"userId",FILTER_VALIDATE_INT);
+
+
 $userDetails = $user->findById($_SESSION['userId']);
 
 if(!$userDetails) {
