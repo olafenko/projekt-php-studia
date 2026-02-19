@@ -3,15 +3,19 @@
 //pobiera z geta id uzytkownika, jezeli chcemy wyswietlic profil kogos innego
 $userId = filter_input(INPUT_GET,"userId",FILTER_VALIDATE_INT);
 
+//jezeli jest puste to user id ustawiane jest na zalogowanego uzytkownika
+if($userId === null){
 
-$userDetails = $user->findById($_SESSION['userId']);
+    $userId = $_SESSION['userId'];
+}
+
+$userDetails = $user->findById($userId);
 
 if(!$userDetails) {
     $errors[] = "Nie znaleziono profilu użytkownika";
 }
 
-$pageTitle = "Twój profil";
-
+$pageTitle = "Profil " . $userDetails['username'];
 $view = __DIR__ . "/../../templates/profile/userProfile.php";
 
 require __DIR__ . "/../../templates/layout.php";
