@@ -42,7 +42,7 @@ $isUserLogged = isset($_SESSION['userId']);
 
         <!--    PRAWA CZESC STRONY-->
         <div class="detailsRight">
-            <h2>Autor ogłoszenia: <?= htmlspecialchars($listingDetails['author']) ?></h2>
+            <a href="../controllers/profileController.php?action=show&userId=<?=$listingDetails['authorId'] ?>">Autor ogłoszenia: <?= htmlspecialchars($listingDetails['author']) ?></a>
             <div class="contactBox">
                 <h2>Kontakt </h2>
                 <p><strong>Email: <?= htmlspecialchars($listingAuthorDetails['email']) ?></p>

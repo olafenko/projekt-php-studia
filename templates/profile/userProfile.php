@@ -17,7 +17,7 @@ $isUserLogged = isset($_SESSION['userId']);
 
         </div>
 <!--        //todo, jezeli uzytkownik wyswietla swoj profil to ma dostepne akcje na nim-->
-        <?php if($isUserLogged && $_SESSION['userId']) ?>
+        <?php if($isUserLogged && $_SESSION['userId'] === $userId) {?>
         <div class="profileActions">
             <a class="detailsBtn" href="../controllers/profileController.php?action=edit">Edytuj profil</a>
             <a class="passwordBtn" href="../controllers/profileController.php?action=passwordChange">Zmień hasło</a>
@@ -26,7 +26,7 @@ $isUserLogged = isset($_SESSION['userId']);
                     <button class="deleteBtn">Dezaktywuj konto ❌</button>
                 </form>
         </div>
-
+        <?php }?>
 
     </div>
 

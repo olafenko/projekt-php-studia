@@ -8,7 +8,7 @@ require __DIR__ . "/../src/User.php";
 require __DIR__ . "/../src/Listing.php";
 require __DIR__ . "/../includes/helpers.php";
 require __DIR__ . "/../includes/ImageUploader.php";
-requireLogin();
+
 
 $pdo = connectWithDatabase();
 $user = new User($pdo);
