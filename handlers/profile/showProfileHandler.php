@@ -9,6 +9,12 @@ if($userId === null){
     $userId = $_SESSION['userId'];
 }
 
+//walidacja niepoprawnego userId podanego w url
+if($userId === false || $userId <=0){
+    header("Location: ../controllers/listingsController.php");
+    exit;
+}
+
 $userDetails = $user->findById($userId);
 
 if(!$userDetails) {
